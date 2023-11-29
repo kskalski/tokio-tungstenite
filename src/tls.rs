@@ -65,7 +65,8 @@ mod encryption {
     #[cfg(feature = "__rustls-tls")]
     pub mod rustls {
         pub use rustls::ClientConfig;
-        use rustls::{RootCertStore, ServerName};
+        use rustls::RootCertStore;
+        use rustls_pki_types::ServerName;
         use tokio_rustls::TlsConnector as TokioTlsConnector;
 
         use std::{convert::TryFrom, sync::Arc};
@@ -124,7 +125,7 @@ mod encryption {
                         }
                     };
                     let domain = ServerName::try_from(domain.as_str())
-                        .map_err(|_| TlsError::InvalidDnsName)?;
+                        .map_err(|_| TlsError::InvalidDnsName)?.to_owned();
                     let stream = TokioTlsConnector::from(config);
                     let connected = stream.connect(domain, socket).await;
 
