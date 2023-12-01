@@ -43,7 +43,7 @@ version = "0.2.11"
 
 [dependencies.rustls]
 optional = true
-version = "0.22.0-alpha.5"
+version = "0.22.0-alpha.6"
 
 [dependencies.rustls-native-certs]
 optional = true
@@ -51,7 +51,7 @@ version = "0.6.2"
 
 [dependencies.rustls-pki-types]
 optional = true
-version = "=0.2.2"
+version = "0.2.3"
 
 [dependencies.tokio-native-tls]
 optional = true
@@ -59,11 +59,11 @@ version = "0.3.1"
 
 [dependencies.tokio-rustls]
 optional = true
-version = "0.25.0-alpha.1"
+version = "0.25.0-alpha.4"
 
 [dependencies.webpki-roots]
 optional = true
-version = "0.25.2"
+version = "0.26.0"
 
 [dev-dependencies]
 futures-channel = "0.3.28"
